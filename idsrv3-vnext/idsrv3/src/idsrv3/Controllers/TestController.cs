@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.AspNet.Authorization;
 
 namespace idsrv3.Controllers
 {

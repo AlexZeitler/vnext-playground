@@ -2,6 +2,7 @@
 using Thinktecture.IdentityServer.Core.Configuration;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.AspNet.DataProtection;
 using Owin;
 using Microsoft.Framework.DependencyInjection;
 
@@ -22,7 +23,7 @@ namespace idsrv3
                 {
                     var builder = new Microsoft.Owin.Builder.AppBuilder();
 
-                    var provider = app.ApplicationServices.GetService<Microsoft.AspNet.Security.DataProtection.IDataProtectionProvider>();
+                    var provider = app.ApplicationServices.GetService<IDataProtectionProvider>();
 
                     builder.Properties["security.DataProtectionProvider"] = new DataProtectionProviderDelegate(purposes =>
                     {
